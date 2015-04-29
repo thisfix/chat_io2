@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.uw.pce.cp125</groupId>
+  <artifactId>chat_io2</artifactId>
+  <version>1.0.0</version>
+  <name>CP125 Chat</name>
+  <description>The CP125 assignments make a chat program</description>
+  <inceptionYear>2015</inceptionYear>
+
+  <dependencies>
+  </dependencies>
+
+  <build>
+    <defaultGoal>compile</defaultGoal>
+    <plugins>
+      <plugin>
+	<artifactId>maven-compiler-plugin</artifactId>
+	<version>3.3</version>
+      </plugin>
+      <plugin>
+	<artifactId>maven-assembly-plugin</artifactId>
+	<version>2.5.3</version>
+	<configuration>
+	  <descriptorRefs>
+	    <descriptorRef>src</descriptorRef>
+	  </descriptorRefs>
+	  <formats>
+	    <format>zip</format>
+	  </formats>
+	</configuration>
+      </plugin>
+      <plugin>
+	<groupId>org.codehaus.mojo</groupId>
+	<artifactId>exec-maven-plugin</artifactId>
+	<version>1.4.0</version>
+	<executions>
+	  <execution>
+	    <phase>verify</phase>
+	    <goals>
+	      <goal>java</goal>
+	    </goals>
+	    <configuration>
+	      <mainClass>cp125.chat.Main</mainClass>
+	    </configuration>
+	  </execution>
+	</executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
